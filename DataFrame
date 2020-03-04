@@ -1,0 +1,19 @@
+A Spark DataFrame is a distributed collection of data organized into named columns that provides operations to filter, group, or cumpute aggregates. Each column in a DataFrame has a name and an associated type. DataFrames are similar to traditional database tables which are structured and concise. DataFrames can be created from structured data files, existing RDDs, tables in Hive or external databases.
+
+DataFrame API came with Apache Spark release 1.3 and resolved the limitations of performance and scaling that occur while using RDDs.
+
+Limitations of RDDs -:
+* When there is not much storage space in memory or on disk, RDDs do not function properly as they get exhausted.
+* RDDs donot have the concept of schema (the structure of database that defines the objects of it). RDDs store both structured and           unstructured data togather, which is not very efficient. 
+* RDDs cannot modify the system in such a way that it runs more efficiently. RDDs do not allow us to debug errors during runtime. 
+* They store data as a collection of Java Objects.
+* RDDs use serialization and garbage collection techniques. This increases the overhead on the memory of the system as they are very         lengthy.
+
+Features of DataFrame -:
+  * Use if Input Optimization Engine -: DataFrames make use of the Input Optimization Engines , eg. Catalyst Optimizer : to process data efficiently. We can use the same engine for all Python , Java , Scala and R Dataframe APIs.
+  * Handling of Structured Data -: DataFrames provide a schematic view of data. Here, the data has some meaning to it when it is stored.
+  * Custom Memory Management -: In RDDs, the data is stored in memory, whereas DataFrame store data off-heap (outside of main Java Heap but still inside RAM) which in turn reduces the garbage collection overload.
+  * Flexibility -: DataFrames, like RDDs, can support various formats of data like CSV , etc.
+  * Scalability -: DataFrames can be integrated with various other Big Data Tools and they allow processing megabytes to petabytes of data at once.
+ 
+
